@@ -2,7 +2,7 @@ import React from "react";
 import "./WeddingCalendar.css";
 
 const WeddingCalendar = () => {
-  const daysOfWeek = ["ԵԿ", "ԵՌ", "ՉՈՌ", "ՀՆԳ", "ՈՒՌ", "ՇԲԱԲ", "ԿԻՌ"];
+  const daysOfWeek = ["Երկ", "Եր", "Չոր", "Հնգ", "ՈՒր", "Շաբ", "Կիր"];
   const days = [
     "", "", "", "", "1", "2", "3",
     "4", "5", "6", "7", "8", "9", "10",
