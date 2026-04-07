@@ -83,59 +83,25 @@
   font-size: 26px;
 }
 
-
-/* RESPONSIVE STYLES */
 @media (max-width: 768px) {
-  .subtitle {
-    font-size: 28px;
-  }
-
-  .div-naming {
-    font-size: 40px;
-  }
-
-  .title {
-    font-size: 32px;
-  }
-
-  .age-label {
-    font-size: 90px;
-  }
-
-  .date {
-    font-size: 20px;
-  }
-
-  .scroll-icon {
-    font-size: 40px;
-  }
+  .subtitle { font-size: 28px; }
+  .div-naming { font-size: 40px; }
+  .title { font-size: 32px; }
+  .age-label { font-size: 90px; }
+  .date { font-size: 20px; }
+  .scroll-icon { font-size: 40px; }
 }
 
 @media (max-width: 480px) {
-  .subtitle {
-    font-size: 22px;
-  }
-
+  .subtitle { font-size: 22px; }
   .div-naming {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     font-size: 30px;
   }
-
-  .title {
-    font-size: 26px;
-  }
-
-  .age-label {
-    font-size: 72px;
-  }
-
-  .date {
-    font-size: 18px;
-  }
-
-  .scroll-icon {
-    font-size: 32px;
-  }
+  .title { font-size: 26px; }
+  .age-label { font-size: 72px; }
+  .date { font-size: 18px; }
+  .scroll-icon { font-size: 32px; }
 }

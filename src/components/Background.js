@@ -1,73 +1,46 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React from "react";
 import "./Background.css";
 
-const imagePaths = [
-  "/images/placeholder1.jpg",
-  "/images/placeholder2.jpg",
-  "/images/placeholder3.jpg",
-];
-
-const Background = ({ children }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState(1);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isNextImageLoaded, setIsNextImageLoaded] = useState(false);
-
-  useLayoutEffect(() => {
-    Promise.all(
-      imagePaths.map((src) => {
-        return new Promise((resolve) => {
-          const img = new Image();
-          img.src = src;
-          img.onload = resolve;
-          img.onerror = resolve;
-        });
-      })
-    ).then(() => {
-      setIsNextImageLoaded(true);
-    });
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsTransitioning(true);
-      setIsNextImageLoaded(false);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (isNextImageLoaded) {
-      const timeout = setTimeout(() => {
-        setCurrentIndex(nextIndex);
-        setNextIndex((nextIndex + 1) % imagePaths.length);
-        setIsTransitioning(false);
-      }, 2000);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [isNextImageLoaded]);
-
+const Background = () => {
   return (
-    <div className="image-container">
-      <img
-        src={imagePaths[currentIndex]}
-        alt="Current"
-        className={`background-img ${isTransitioning ? "fade-out" : "visible"}`}
-      />
-      {isTransitioning && (
-        <img
-          src={imagePaths[nextIndex]}
-          alt="Next"
-          className="background-img fade-in"
-          onLoad={() => setIsNextImageLoaded(true)}
+    <div className="birthday-background">
+      {/* Confetti */}
+      {Array.from({ length: 40 }).map((_, i) => (
+        <div
+          key={`confetti-${i}`}
+          className={`confetti confetti-${i % 6}`}
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${3 + Math.random() * 4}s`,
+          }}
         />
-      )}
-      <div className="background-overlay">
-        <div className="dark-overlay" />
-        <div className="content-wrapper">{children}</div>
-      </div>
+      ))}
+
+      {/* Stars */}
+      {Array.from({ length: 15 }).map((_, i) => (
+        <div
+          key={`star-${i}`}
+          className="star"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 3}s`,
+          }}
+        />
+      ))}
+
+      {/* Balloons */}
+      <div className="balloon balloon-blue" style={{ left: "3%", top: "10%" }} />
+      <div className="balloon balloon-pink" style={{ left: "10%", top: "30%" }} />
+      <div className="balloon balloon-blue" style={{ right: "3%", top: "10%" }} />
+      <div className="balloon balloon-pink" style={{ right: "10%", top: "30%" }} />
+      <div className="balloon balloon-blue" style={{ left: "6%", top: "65%" }} />
+      <div className="balloon balloon-pink" style={{ right: "6%", top: "70%" }} />
+
+      {/* Dark overlay for text readability */}
+      <div className="bg-overlay" />
     </div>
   );
 };

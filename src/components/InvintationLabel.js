@@ -21,10 +21,9 @@ export default function InvitationLabel({
     e.preventDefault();
   
     try {
-      const response = await fetch("https://sheetdb.io/api/v1/mejuvf94r9rx2", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbylu74m77MdDTj677IP4PCCFPc6gnJob8ps6VFMSryVATnvWJ_kCkzLrg7uEA9dX6yy9Q/exec", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: formData }),
+        body: JSON.stringify(formData),
       });
   
       if (response.ok) {

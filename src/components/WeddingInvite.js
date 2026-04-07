@@ -7,6 +7,18 @@ import WeddingCalendar from "./WeddingCalendar";
 import BackgroundWrapper from "./BackgroundWrapper";
 import "./WeddingInvintation.css";
 
+const photos = [
+  { src: "/images/IMG_2627.PNG", className: "photo-1" },
+  { src: "/images/IMG_2629.PNG", className: "photo-2" },
+  { src: "/images/IMG_2630.PNG", className: "photo-3" },
+  { src: "/images/IMG_2631.PNG", className: "photo-4" },
+  { src: "/images/IMG_2632.PNG", className: "photo-5" },
+  { src: "/images/IMG_2633.PNG", className: "photo-6" },
+  { src: "/images/IMG_2635.PNG", className: "photo-7" },
+  { src: "/images/IMG_2636.PNG", className: "photo-8" },
+  { src: "/images/IMG_2637.PNG", className: "photo-9" },
+];
+
 export default function WeddingInvite() {
   const fields = [
     {
@@ -36,6 +48,11 @@ export default function WeddingInvite() {
   return (
     <BackgroundWrapper>
       <section className="center-content-wrapper">
+        {photos.map((photo, i) => (
+          <div key={i} className={`polaroid ${photo.className}`}>
+            <img src={photo.src} alt={`Henry ${i + 1}`} />
+          </div>
+        ))}
         <CenterContent />
       </section>
 
