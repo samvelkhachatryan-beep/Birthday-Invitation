@@ -8,15 +8,15 @@ import BackgroundWrapper from "./BackgroundWrapper";
 import "./WeddingInvintation.css";
 
 const photos = [
-  { src: "/images/IMG_2627.PNG", className: "photo-1" },
-  { src: "/images/IMG_2629.PNG", className: "photo-2" },
-  { src: "/images/IMG_2630.PNG", className: "photo-3" },
-  { src: "/images/IMG_2631.PNG", className: "photo-4" },
-  { src: "/images/IMG_2632.PNG", className: "photo-5" },
-  { src: "/images/IMG_2633.PNG", className: "photo-6" },
-  { src: "/images/IMG_2635.PNG", className: "photo-7" },
-  { src: "/images/IMG_2636.PNG", className: "photo-8" },
-  { src: "/images/IMG_2637.PNG", className: "photo-9" },
+  { src: "/images/IMG_2627.jpg", className: "photo-1" },
+  { src: "/images/IMG_2629.jpg", className: "photo-2" },
+  { src: "/images/IMG_2630.jpg", className: "photo-3" },
+  { src: "/images/IMG_2631.jpg", className: "photo-4" },
+  { src: "/images/IMG_2632.jpg", className: "photo-5" },
+  { src: "/images/IMG_2633.jpg", className: "photo-6" },
+  { src: "/images/IMG_2635.jpg", className: "photo-7" },
+  { src: "/images/IMG_2636.jpg", className: "photo-8" },
+  { src: "/images/IMG_2637.jpg", className: "photo-9" },
 ];
 
 export default function WeddingInvite() {
