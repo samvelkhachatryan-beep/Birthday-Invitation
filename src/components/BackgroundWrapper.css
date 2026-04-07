@@ -1,0 +1,21 @@
+.background-wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+}
+
+.page-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+.image-container {
+  position: fixed;
+  inset: 0;
+  background: #1a1a2e;
+  overflow: hidden;
+  z-index: -1;
+}

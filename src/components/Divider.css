@@ -1,0 +1,5 @@
+.custom-divider {
+    border: none;
+    transition: all 0.3s ease;
+    background-color: rgba(245, 193, 71, 0.4);
+  }

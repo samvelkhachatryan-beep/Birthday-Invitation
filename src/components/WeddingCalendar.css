@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'Freeserif200';
+  src: url('../../public/freeserif/FreeSerifItalic.otf');
+  font-weight: 200;
+}
+.calendar-container {
+  text-align: center;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  margin-top: 2rem;
+}
+
+.calendar-title {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.month {
+  font-family:'Freeserif200' ;
+  font-style: italic;
+  margin-right: 8px;
+}
+
+.year {
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  max-width: 320px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+.calendar-day-name {
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.calendar-day {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-highlight {
+  position: relative;
+  color: #1a1a2e;
+  font-weight: bold;
+  background: #F5C147;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(245, 193, 71, 0.5);
+}

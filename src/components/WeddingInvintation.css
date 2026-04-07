@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'MontserratArm';
+  src: url('../../public/montserrat-armenian/Montserratarm-Thin.otf');
+}
+@font-face {
+  font-family: 'MontserratArm300';
+  src: url('../../public/montserrat-armenian/Montserratarm-Regular.otf');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Freeserif200';
+  src: url('../../public/freeserif/FreeSerif.ttf');
+  font-weight: 200;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: transparent;
+}
+
+.center-content-wrapper {
+  padding: 60px 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  height: 100dvh;
+}
+
+.intro-section {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.invitation-intro {
+  font-family: 'Freeserif200', Arial, sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+  max-width: 80%;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.events-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.confirmation-section {
+  padding: 40px 20px;
+  background-color: transparent;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center ;
+}
+.invitation-confirmation {
+  height: 160px;
+}
+
+.invitation-confirmation h2,
+.invitation-confirmation p {
+  font-family: 'Freeserif200', Arial, sans-serif;
+  color: #fff;
+}
+
+.invitation-confirmation h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.invitation-confirmation p {
+  font-size: 18px;
+  color: #ccc;
+}
