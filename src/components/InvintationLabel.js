@@ -12,6 +12,7 @@ export default function InvitationLabel({
 
   const [formData, setFormData] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (name, value) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -19,18 +20,22 @@ export default function InvitationLabel({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    if (loading) return;
+    setLoading(true);
+
     try {
       const response = await fetch("https://script.google.com/macros/s/AKfycbylu74m77MdDTj677IP4PCCFPc6gnJob8ps6VFMSryVATnvWJ_kCkzLrg7uEA9dX6yy9Q/exec", {
         method: "POST",
         body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
         setSubmitted(true);
       }
     } catch (error) {
       alert("Չհաջողվեց ուղարկել պատասխանը։ Խնդրում ենք ստուգել ինտերնետ կապը։");
+    } finally {
+      setLoading(false);
     }
   };
   
@@ -95,8 +100,8 @@ export default function InvitationLabel({
         );
       })}
 
-      <button className="submit-btn" type="submit">
-        {submitText}
+      <button className="submit-btn" type="submit" disabled={loading}>
+        {loading ? "..." : submitText}
       </button>
 
       <div className="footer-heart">
